@@ -14,7 +14,7 @@
         /* 화이트 테마 리포트 카드 */
         .ai-report-card { background: white; border-radius: 2rem; border: 1px solid #e2e8f0; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08); }
         
-        .select-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 1px solid #e2e8f0; font-size: 0.85rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8fafc; text-align: center; width: 100%; color: #64748b; }
+        .select-btn { transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 1px solid #e2e8f0; font-size: 0.85rem; padding: 0.75rem; border-radius: 0.75rem; background: #f8fafc; text-align: center; width: 100%; color: #64748b; font-style: normal !important; }
         .select-btn:hover { background: #f1f5f9; border-color: #cbd5e1; color: #1e293b; }
         .select-btn.active { background-color: #2563eb; color: white !important; border-color: #2563eb; font-weight: 700; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
         
@@ -22,7 +22,7 @@
         .modal-content { background: white; padding: 2.5rem; border-radius: 2rem; width: 92%; max-width: 450px; position: relative; }
         .modal-overlay.active { display: flex; }
 
-        .hero-title { letter-spacing: -0.06em; line-height: 1.1; font-weight: 900; }
+        .hero-title { letter-spacing: -0.06em; line-height: 1.1; font-weight: 900; font-style: normal; }
         .btn-glow { box-shadow: 0 0 25px rgba(37, 99, 235, 0.4); }
 
         @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
@@ -49,7 +49,7 @@
                 <i class="fas fa-times text-2xl"></i>
             </button>
             <h3 class="text-2xl font-bold mb-2 tracking-tighter">시범 사용 신청</h3>
-            <p class="text-slate-500 text-xs mb-8 leading-relaxed">현장 도입 및 AI 분석 관련 문의를 남겨주시면<br>전문 상담사가 연락드립니다.</p>
+            <p class="text-slate-500 text-xs mb-8 leading-relaxed">현장 도입 및 AI 분석 관련 문의를 남겨주시면 전문 상담사가 연락드립니다.</p>
             
             <form id="trialForm" onsubmit="submitTrial(event)" class="space-y-4">
                 <div>
@@ -89,7 +89,6 @@
                 <span class="text-lg md:text-2xl font-black tracking-tighter text-slate-900 italic">민원제로</span>
             </div>
             
-            <!-- 데스크톱 메뉴 -->
             <div class="hidden md:flex gap-10 text-sm font-bold text-slate-500 tracking-tighter">
                 <a href="#problem" class="hover:text-blue-600 transition">현장 리스크</a>
                 <a href="#ai-demo" class="hover:text-blue-600 transition">AI 진단</a>
@@ -101,7 +100,6 @@
                 <button onclick="openModal()" class="hidden xs:block bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-2xl text-xs md:text-sm font-black hover:bg-blue-700 transition shadow-lg">
                     시범 사용
                 </button>
-                <!-- 모바일 햄버거 버튼 -->
                 <button onclick="toggleMobileMenu()" class="md:hidden text-slate-600 p-2 text-xl focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -120,7 +118,6 @@
         <a href="#pricing" onclick="toggleMobileMenu()" class="text-xl font-bold text-slate-800 border-b border-slate-50 pb-2">요금제</a>
         <button onclick="openModal(); toggleMobileMenu();" class="mt-4 bg-blue-600 text-white py-4 rounded-2xl font-black text-center">시범 사용 신청</button>
     </div>
-    <!-- 모바일 메뉴 배경 레이어 -->
     <div id="menu-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[55] hidden md:hidden"></div>
 
     <!-- 히어로 섹션 -->
@@ -133,7 +130,7 @@
                 </span>
                 AI Complaint Prevention Platform
             </div>
-            <h1 class="hero-title text-4xl md:text-6xl lg:text-8xl text-slate-900 mb-6 md:mb-8 tracking-tighter break-keep px-4">
+            <h1 class="hero-title text-4xl md:text-6xl lg:text-8xl text-slate-900 mb-6 md:mb-8 tracking-tighter break-keep px-4 font-black">
                 민원은 대응이 아니라,<br>
                 <span class="text-blue-600">예방입니다.</span>
             </h1>
@@ -147,7 +144,7 @@
     </header>
 
     <!-- 현장 리스크 섹션 -->
-    <section id="problem" class="py-20 md:py-32 bg-white border-b border-slate-100 scroll-mt-16">
+    <section id="problem" class="py-20 md:py-32 bg-white border-b border-slate-100 scroll-mt-16 text-slate-900">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div class="text-center mb-16 md:mb-20">
                 <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tighter text-slate-900 break-keep px-2">현장 실장님, 오늘도 민원 전화가 두려우신가요?</h2>
@@ -191,15 +188,15 @@
                 <!-- 좌측 선택 패널 -->
                 <div class="lg:col-span-5 bg-white p-6 md:p-10 rounded-[2.5rem] border border-slate-200 shadow-sm space-y-8 text-left">
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest">1. 현장 규모 및 세대 위치</label>
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">1. 현장 규모 및 세대 위치</label>
                         <div class="grid grid-cols-1 xs:grid-cols-2 gap-6">
-                            <div id="pyeong-group" class="grid grid-cols-2 gap-2">
+                            <div id="pyeong-group" class="grid grid-cols-2 gap-2 text-left">
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '20평대')">20평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '30평대')">30평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '40평대')">40평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '50평대+')">50평+</button>
                             </div>
-                            <div id="floor-group" class="grid grid-cols-2 gap-2">
+                            <div id="floor-group" class="grid grid-cols-2 gap-2 text-left">
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '최상층')">최상층</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '중간층')">중간층</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '저층부')">저층부</button>
@@ -209,24 +206,24 @@
                     </div>
 
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest">2. 공정 선택 (소음 발생원)</label>
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">2. 상세 공정 선택 (중복 가능)</label>
                         <div id="process-group" class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '전체 철거')">전체 철거</button>
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '마감 철거')">마감 철거</button>
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '욕실 설비')">욕실 설비</button>
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '창호 교체')">창호 교체</button>
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '목공사')">목공사</button>
-                            <button class="select-btn" onclick="selectSingle(this, 'process', '바닥 배관')">바닥 배관</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '전체 철거')">전체 철거</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '마감 철거')">마감 철거</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '욕실 설비')">욕실 설비</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '창호 교체')">창호 교체</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '목공사')">목공사</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'process', '바닥 배관')">바닥 배관</button>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest">3. 주변 특이사항 (다중 선택)</label>
-                        <div id="note-group" class="grid grid-cols-2 gap-2">
-                            <button class="select-btn" onclick="toggleNote(this, '신생아 가구')">👶 신생아 가구</button>
-                            <button class="select-btn" onclick="toggleNote(this, '수험생 거주')">📚 수험생 거주</button>
-                            <button class="select-btn" onclick="toggleNote(this, '관리소 엄격')">👮 관리소 엄격</button>
-                            <button class="select-btn" onclick="toggleNote(this, '주말 작업 불가')">🚫 주말 금지</button>
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">3. 주변 특이사항 (중복 가능)</label>
+                        <div id="note-group" class="grid grid-cols-2 gap-2 text-left">
+                            <button class="select-btn" onclick="toggleMulti(this, 'notes', '신생아 가구')">👶 신생아 가구</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'notes', '수험생 거주')">📚 수험생 거주</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'notes', '관리소 엄격')">👮 관리소 엄격</button>
+                            <button class="select-btn" onclick="toggleMulti(this, 'notes', '주말 작업 불가')">🚫 주말 금지</button>
                         </div>
                     </div>
 
@@ -235,31 +232,31 @@
                     </button>
                 </div>
 
-                <!-- 우측 결과 리포트 (화이트 테마) -->
+                <!-- 우측 결과 리포트 -->
                 <div class="lg:col-span-7">
                     <div class="ai-report-card min-h-[500px] md:min-h-[700px] p-6 md:p-12 flex flex-col relative overflow-hidden text-left">
                         <!-- 대기 -->
                         <div id="ai-idle" class="flex-1 flex flex-col items-center justify-center text-center opacity-40 text-slate-800">
                             <i class="fas fa-microchip text-5xl md:text-7xl mb-6 text-blue-600"></i>
                             <h3 class="text-xl md:text-2xl font-black tracking-tighter mb-4">분석 대기 중</h3>
-                            <p class="text-sm md:text-lg font-medium leading-relaxed break-keep">좌측 항목을 선택한 뒤<br>분석 버튼을 클릭해 주세요.</p>
+                            <p class="text-sm md:text-lg font-medium leading-relaxed break-keep text-center">항목을 선택한 뒤 분석 버튼을 클릭해 주세요.</p>
                         </div>
 
                         <!-- 로딩 -->
                         <div id="ai-loading" class="hidden flex-1 flex flex-col items-center justify-center space-y-10 text-center">
                             <div class="w-16 h-16 md:w-24 md:h-24 border-8 border-blue-100 border-t-blue-600 rounded-full animate-spin mx-auto"></div>
                             <div>
-                                <p class="text-blue-600 font-black text-xl md:text-3xl tracking-tighter loading-pulse italic uppercase">제미나이 2.5 시뮬레이션 중</p>
-                                <p class="text-slate-400 text-[10px] md:text-sm mt-3 uppercase font-black tracking-widest italic opacity-70 break-keep">Analyzing building data in real-time...</p>
+                                <p class="text-blue-600 font-black text-xl md:text-3xl tracking-tighter loading-pulse uppercase">제미나이 2.5 시뮬레이션 중</p>
+                                <p class="text-slate-400 text-[10px] md:text-sm mt-3 uppercase font-black tracking-widest opacity-70 break-keep text-center">Analyzing construction data in real-time...</p>
                             </div>
                         </div>
 
-                        <!-- 콘텐츠 -->
+                        <!-- 결과 콘텐츠 -->
                         <div id="ai-content" class="hidden space-y-8 md:space-y-10 animate-in fade-in duration-300">
                             <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-slate-100 pb-6 md:pb-8">
                                 <div>
-                                    <h3 class="font-black text-slate-900 text-xl md:text-3xl tracking-tighter italic uppercase">AI Diagnostic Report</h3>
-                                    <p class="text-[9px] md:text-[11px] text-blue-600 font-black tracking-widest mt-1 md:mt-2 uppercase">Complaint Prevention Risk Analysis</p>
+                                    <h3 class="font-black text-slate-900 text-xl md:text-3xl tracking-tighter uppercase font-sans">AI Diagnostic Report</h3>
+                                    <p class="text-[9px] md:text-[11px] text-blue-600 font-black tracking-widest mt-1 md:mt-2 uppercase">Complaints Prevention Risk Analysis</p>
                                 </div>
                                 <span id="res-badge" class="mt-4 md:mt-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm"></span>
                             </div>
@@ -267,19 +264,19 @@
                             <div class="grid grid-cols-3 gap-2 md:gap-4">
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
                                     <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none">리스크</p>
-                                    <p id="res-score" class="text-lg md:text-3xl font-black text-blue-600 leading-none mt-1"></p>
+                                    <p id="res-score" class="text-sm md:text-2xl font-black text-blue-600 leading-none mt-1"></p>
                                 </div>
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
                                     <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none">피크 소음</p>
-                                    <p id="res-noise" class="text-lg md:text-3xl font-black text-orange-500 leading-none mt-1"></p>
+                                    <p id="res-noise" class="text-sm md:text-2xl font-black text-orange-500 leading-none mt-1 whitespace-nowrap"></p>
                                 </div>
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
                                     <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none">집진 효율</p>
-                                    <p id="res-dust" class="text-lg md:text-3xl font-black text-emerald-500 leading-none mt-1"></p>
+                                    <p id="res-dust" class="text-sm md:text-2xl font-black text-emerald-500 leading-none mt-1"></p>
                                 </div>
                             </div>
 
-                            <div class="space-y-6 md:space-y-8">
+                            <div class="space-y-6 md:space-y-8 text-left">
                                 <div>
                                     <p class="text-[10px] md:text-[11px] text-slate-900 font-black mb-3 md:mb-4 uppercase tracking-widest flex items-center gap-2">
                                         <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span> 예측 민원 시나리오
@@ -290,14 +287,14 @@
                                     <p class="text-[10px] md:text-[11px] text-blue-600 font-black mb-2 md:mb-3 uppercase tracking-widest">전문가 대응 가이드</p>
                                     <p id="res-strategy" class="text-xs md:text-[15px] text-left leading-relaxed text-slate-700 font-semibold break-keep"></p>
                                 </div>
-                                <div class="border border-slate-200 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-slate-50/50 relative">
+                                <div class="border border-slate-200 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-slate-50/50 relative text-center">
                                     <p class="text-[10px] md:text-[11px] text-slate-400 font-black mb-4 uppercase tracking-widest text-center">입주민 배포용 안심 안내문</p>
-                                    <p id="res-draft" class="text-xs md:text-sm text-slate-600 italic leading-relaxed text-center font-medium break-keep"></p>
+                                    <p id="res-draft" class="text-xs md:text-sm text-slate-600 leading-relaxed text-center font-medium break-keep"></p>
                                     <div class="mt-6 md:mt-8 flex flex-col md:flex-row justify-center gap-3">
-                                        <button onclick="copyRes()" class="bg-white border border-slate-200 px-6 py-3 rounded-2xl text-xs font-black hover:bg-slate-50 transition flex items-center justify-center gap-2 text-slate-900 shadow-sm">
+                                        <button onclick="copyRes()" class="bg-white border border-slate-200 px-6 py-3 rounded-2xl text-xs font-black hover:bg-slate-50 transition flex items-center justify-center gap-2 text-slate-900 shadow-sm active:scale-95">
                                             <i class="fas fa-copy"></i> 문구 복사
                                         </button>
-                                        <button onclick="printNotice()" class="bg-blue-600 px-6 py-3 rounded-2xl text-xs font-black text-white hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg">
+                                        <button onclick="printNotice()" class="bg-blue-600 px-6 py-3 rounded-2xl text-xs font-black text-white hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg active:scale-95">
                                             <i class="fas fa-file-pdf"></i> 인쇄하기 (A4)
                                         </button>
                                     </div>
@@ -311,14 +308,14 @@
     </section>
 
     <!-- 안심 가이드 리포트 샘플 -->
-    <section id="sample" class="py-24 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center text-slate-900">
+    <section id="sample" class="py-24 bg-white border-t border-slate-100 scroll-mt-16 text-slate-900">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
             <h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tighter break-keep">데이터로 증명하는 안심 리포트</h2>
             <p class="text-slate-500 mb-16 text-sm md:text-xl max-w-3xl mx-auto font-medium leading-relaxed tracking-tight break-keep">단순히 '죄송합니다'가 아닌, 실제 수치와 AI 시뮬레이션 데이터로 주민들을 먼저 안심시키세요.</p>
             
             <div class="sample-report p-6 md:p-12 border border-slate-200 shadow-2xl max-w-3xl mx-auto text-left relative overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] bg-white">
                 <div class="absolute top-0 right-0 w-48 h-48 bg-blue-50 rounded-bl-full opacity-40"></div>
-                <div class="flex justify-between items-start mb-10 border-b border-slate-100 pb-8 md:pb-10 relative z-10 text-left">
+                <div class="flex justify-between items-start mb-10 border-b border-slate-100 pb-8 md:pb-10 relative z-10 text-left text-slate-900">
                     <div>
                         <div class="flex items-center gap-2 mb-3">
                             <div class="bg-blue-600 text-white p-1.5 rounded-lg text-[10px]">
@@ -326,7 +323,7 @@
                             </div>
                             <span class="text-sm md:text-xl font-black tracking-tighter text-slate-800 italic">민원제로</span>
                         </div>
-                        <h4 class="text-xl md:text-4xl font-black tracking-tighter text-slate-900 leading-tight">안심 시공 가이드 리포트</h4>
+                        <h4 class="text-xl md:text-4xl font-black tracking-tighter text-slate-900 leading-tight font-sans">안심 시공 가이드 리포트</h4>
                     </div>
                     <i class="fas fa-qrcode text-5xl md:text-7xl text-slate-800"></i>
                 </div>
@@ -346,15 +343,15 @@
                     <div class="grid grid-cols-3 gap-4">
                         <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white text-center shadow-sm">
                             <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase mb-2">피크 소음</p>
-                            <p class="text-lg md:text-3xl font-black text-orange-600 leading-none">78.5 dB</p>
+                            <p class="text-sm md:text-2xl font-black text-orange-600 leading-none">78.5 dB</p>
                         </div>
                         <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white text-center shadow-sm">
                             <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase mb-2">집진 효율</p>
-                            <p class="text-lg md:text-3xl font-black text-emerald-600 leading-none">94.2 %</p>
+                            <p class="text-sm md:text-2xl font-black text-emerald-600 leading-none">94.2 %</p>
                         </div>
                         <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white text-center shadow-sm">
                             <p class="text-[8px] md:text-[10px] font-black text-slate-400 uppercase mb-2">민원 점수</p>
-                            <p class="text-blue-600 font-black text-lg md:text-2xl leading-none italic uppercase">Safe</p>
+                            <p class="text-blue-600 font-black text-sm md:text-xl leading-none italic uppercase">Safe</p>
                         </div>
                     </div>
 
@@ -364,33 +361,31 @@
         </div>
     </section>
 
-    <!-- 요금제 섹션 (복구됨) -->
+    <!-- 요금제 섹션 -->
     <section id="pricing" class="py-24 bg-slate-50 text-center text-slate-900 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl md:text-5xl font-black mb-16 tracking-tighter text-slate-900 underline underline-offset-8 decoration-blue-600 decoration-4 uppercase">요금제</h2>
-            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center">
-                <!-- B2C -->
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center text-center">
                 <div class="bg-white p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-center">
-                    <h3 class="text-slate-400 font-bold uppercase text-xs mb-4 tracking-widest">개별 현장권</h3>
-                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-slate-900 tracking-tighter leading-none">₩55,000 <span class="text-sm font-normal text-slate-400 not-italic">/ 현장</span></div>
+                    <h3 class="text-slate-400 font-bold uppercase text-xs mb-4 tracking-widest text-center">개별 현장권</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-8 text-slate-900 tracking-tighter leading-none italic">₩55,000 <span class="text-sm font-normal text-slate-400 not-italic">/ 현장</span></div>
                     <ul class="text-left space-y-4 mb-12 text-slate-600 text-sm font-bold tracking-tight">
                         <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> AI 정밀 리포트 1회 발행</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 입주민 안내용 인쇄물 양식 자동 생성</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 입주민 안내용 인쇄물 양식 제공</li>
                         <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 행정 소명용 데이터 리포트 제공</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full border-2 border-slate-900 py-4 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition uppercase text-sm">시범 사용 신청</button>
+                    <button onclick="openModal()" class="w-full border-2 border-slate-900 py-4 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition uppercase text-sm active:scale-95">시범 사용 신청</button>
                 </div>
-                <!-- B2B -->
                 <div class="bg-slate-900 text-white p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border-4 border-blue-600 shadow-2xl flex flex-col items-center relative scale-100 md:scale-105">
                     <div class="absolute -top-5 bg-blue-600 text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-blue-500/50">Enterprise</div>
-                    <h3 class="text-blue-400 font-bold uppercase text-xs mb-4 tracking-widest">비즈니스 구독권</h3>
-                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-white tracking-tighter leading-none">별도 문의 <span class="text-sm font-normal text-slate-500 not-italic">/ 월</span></div>
+                    <h3 class="text-blue-400 font-bold uppercase text-xs mb-4 tracking-widest text-center">비즈니스 구독권</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-8 text-white tracking-tighter leading-none italic">별도 문의 <span class="text-sm font-normal text-slate-500 not-italic">/ 월</span></div>
                     <ul class="text-left space-y-4 mb-12 text-slate-300 text-sm font-bold tracking-tight">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 무제한 현장 등록 및 AI 리스크 분석</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 무제한 현장 등록 및 AI 분석</li>
                         <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 시공사 통합 현장 대시보드 관리</li>
                         <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 실시간 소음 모니터링 연동</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full bg-blue-600 py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg uppercase tracking-tighter text-sm">상담 및 문의하기</button>
+                    <button onclick="openModal()" class="w-full bg-blue-600 py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg uppercase tracking-tighter text-sm active:scale-95">상담 및 문의하기</button>
                 </div>
             </div>
         </div>
@@ -398,8 +393,8 @@
 
     <!-- 인쇄용 숨겨진 프레임 (Hidden) -->
     <div id="print-frame" class="hidden">
-        <div style="padding: 60px; border: 15px double #1e40af; background: white; min-height: 1100px; color: black !important; text-align: left;">
-            <div style="text-align: center; margin-bottom: 80px;">
+        <div style="padding: 60px; border: 20px double #1e40af; background: white; min-height: 1100px; color: black !important; text-align: left;">
+            <div style="text-align: center; margin-bottom: 60px;">
                 <h1 style="font-size: 60px; font-weight: 900; color: #1e3a8a; margin-bottom: 20px; letter-spacing: -3px;">공사 안내 및 주민 양해문</h1>
                 <p style="font-size: 24px; color: #64748b; font-weight: 700;">첨단 AI 데이터 리스크 관리 솔루션 | 민원제로 리포트</p>
             </div>
@@ -421,22 +416,39 @@
     </div>
 
     <!-- 푸터 -->
-    <footer class="bg-slate-900 py-20 text-white/30 text-[10px] md:text-xs text-center border-t border-white/5">
-        <div class="flex items-center justify-center gap-3 mb-8 text-white">
-            <div class="bg-blue-600 text-white p-1.5 md:p-2 rounded-lg shadow-lg">
-                <i class="fas fa-shield-halved text-sm md:text-lg"></i>
+    <footer class="bg-slate-900 py-16 md:py-24 text-white/30 text-[11px] md:text-xs text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-3 mb-10 text-white">
+                <div class="bg-blue-600 text-white p-1.5 md:p-2 rounded-lg shadow-lg shadow-blue-400/20">
+                    <i class="fas fa-shield-halved text-sm md:text-lg"></i>
+                </div>
+                <span class="font-black text-xl md:text-2xl tracking-tighter italic">민원제로</span>
             </div>
-            <span class="font-black text-xl md:text-2xl tracking-tighter italic">민원제로</span>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left opacity-80 max-w-4xl mx-auto border-b border-white/5 pb-10 mb-10">
+                <div class="space-y-2">
+                    <p class="text-white/60 font-black uppercase tracking-widest text-[10px] mb-4">Company Info</p>
+                    <p class="flex gap-2"><span>기업명:</span> <span class="text-white/90">㈜미노바이</span></p>
+                    <p class="flex gap-2"><span>대표자:</span> <span class="text-white/90">박찬수</span></p>
+                    <p class="flex gap-2"><span>법인등록번호:</span> <span class="text-white/90">110111-7654321</span></p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-white/60 font-black uppercase tracking-widest text-[10px] mb-4">Contact & Address</p>
+                    <p class="flex gap-2"><span>이메일:</span> <span class="text-white/90 underline decoration-white/20">nofomo2025@gmail.com</span></p>
+                    <p class="flex gap-2"><span>주소:</span> <span class="text-white/90">서울특별시 강남구 테헤란로 인테리어 빌딩 14층</span></p>
+                </div>
+            </div>
+
+            <p class="mb-2 uppercase tracking-[0.2em] font-black break-keep px-4 text-white/20 font-sans">© 2024 MinwonZero AI Infrastructure Solution. All Rights Reserved.</p>
         </div>
-        <p class="mb-2 uppercase tracking-widest font-black break-keep px-4">© 2024 MinwonZero AI Infrastructure Solution. All Rights Reserved.</p>
-        <p class="font-medium break-keep px-4">서울특별시 강남구 테헤란로 인테리어 빌딩 14층</p>
     </footer>
 
     <script>
         const apiKey = ""; 
         const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
 
-        let selections = { pyeong: "", floor: "", process: "", notes: [] };
+        // 선택값 관리
+        let selections = { pyeong: "", floor: "", process: [], notes: [] };
 
         // 모바일 메뉴 토글
         function toggleMobileMenu() {
@@ -446,21 +458,22 @@
             overlay.classList.toggle('hidden');
         }
 
+        // 단일 선택 (평형, 층수)
         function selectSingle(btn, category, val) {
             const group = document.getElementById(`${category}-group`);
             if(!group) return;
-            const btns = group.querySelectorAll('.select-btn');
-            btns.forEach(b => b.classList.remove('active'));
+            group.querySelectorAll('.select-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             selections[category] = val;
         }
 
-        function toggleNote(btn, val) {
-            if (selections.notes.includes(val)) {
-                selections.notes = selections.notes.filter(n => n !== val);
+        // 다중 선택 (공정, 특이사항)
+        function toggleMulti(btn, category, val) {
+            if (selections[category].includes(val)) {
+                selections[category] = selections[category].filter(n => n !== val);
                 btn.classList.remove('active');
             } else {
-                selections.notes.push(val);
+                selections[category].push(val);
                 btn.classList.add('active');
             }
         }
@@ -474,18 +487,21 @@
         }
 
         async function runDiagnostic() {
-            document.getElementById('ai-idle').classList.add('hidden');
-            document.getElementById('ai-content').classList.add('hidden');
+            const idle = document.getElementById('ai-idle');
             const loading = document.getElementById('ai-loading');
+            const content = document.getElementById('ai-content');
+
+            idle.classList.add('hidden');
+            content.classList.add('hidden');
             loading.classList.remove('hidden');
             loading.style.display = 'flex';
 
             const p = selections.pyeong || "30평대";
             const f = selections.floor || "중간층";
-            const pr = selections.process || "전체 철거";
+            const pr = selections.process.length > 0 ? selections.process.join(', ') : "전체 철거";
             const nt = selections.notes.length > 0 ? selections.notes.join(', ') : "특징 없음";
 
-            const prompt = `당신은 인테리어 전문가입니다. 평형:${p}, 층수:${f}, 공정:${pr}, 특이:${nt}. 다음 필드 포함 JSON으로 답변: {riskLevel: "상/중/하", riskScore: "0-100점", peakNoise: "dB수치", dustLevel: "0-100%", scenarios: ["민원시나리오3개"], strategy: "실장님용대응", draft: "주민양해문"}`;
+            const prompt = `당신은 인테리어 전문가입니다. 평형:${p}, 층수:${f}, 공정:${pr}, 특이:${nt}. 다음 필드 포함 상세 JSON 답변: {riskLevel: "상/중/하", riskScore: "0-100점", peakNoise: "dB수치", dustLevel: "0-100%", scenarios: ["민원시나리오3개"], strategy: "실장님용대응", draft: "주민양해문"}`;
 
             try {
                 if (!apiKey || apiKey.trim() === "") throw new Error("DemoMode");
@@ -535,7 +551,7 @@
             
             const badge = document.getElementById('res-badge');
             badge.innerText = `위험도: ${data.riskLevel}`;
-            badge.className = `text-[10px] px-4 py-1.5 rounded-full font-black uppercase tracking-widest ` + 
+            badge.className = `text-[10px] px-5 py-2 rounded-full font-black uppercase tracking-widest ` + 
                 (data.riskLevel.includes('상') ? 'bg-red-500 text-white shadow-md' : (data.riskLevel.includes('중') ? 'bg-yellow-400 text-slate-900 shadow-md' : 'bg-green-500 text-white shadow-md'));
 
             document.getElementById('res-score').innerText = data.riskScore;
@@ -544,7 +560,7 @@
 
             document.getElementById('res-scenarios').innerHTML = data.scenarios.map(s => 
                 `<div class="flex gap-4 text-[13px] text-slate-600 p-4 bg-slate-50 rounded-2xl border border-slate-100 animate-in slide-in-from-right duration-500 text-left font-medium break-keep">
-                    <i class="fas fa-exclamation-triangle text-orange-500 mt-1"></i> ${s}
+                    <i class="fas fa-exclamation-triangle text-orange-500 mt-1"></i> <span>${s}</span>
                 </div>`).join('');
 
             document.getElementById('res-strategy').innerText = data.strategy;

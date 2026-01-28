@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- 오픈 그래프(OG) 메타 태그: 링크 공유 시 나타나는 썸네일 및 정보 설정 -->
+    <!-- 오픈 그래프(OG) 메타 태그: 링크 공유 시 나타나는 썸네일 설정 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="민원제로 - AI 기반 인테리어 민원 예방 플랫폼">
-    <meta property="og:description" content="공사 중단과 이웃 항의, 이제 데이터로 해결하십시오. AI 시뮬레이션으로 안심 리포트를 발행하세요.">
+    <meta property="og:description" content="민원은 사후 대응이 아니라, 사전 예방입니다. 전문가가 자문한 리포트로 이웃의 신뢰를 얻으세요.">
     <meta property="og:image" content="og-image.png">
     <meta property="og:url" content="https://minwonzero.vercel.app">
     
@@ -23,6 +23,7 @@
             word-break: keep-all; 
             overflow-x: hidden; 
             background-color: #f8fafc;
+            font-style: normal !important;
         }
 
         /* 아이콘 폰트 보호 */
@@ -49,7 +50,7 @@
         .modal-content { background: white; padding: 2.5rem; border-radius: 2rem; width: 92%; max-width: 450px; position: relative; }
         .modal-overlay.active { display: flex; }
 
-        .hero-title { letter-spacing: -0.06em; line-height: 1.1; font-weight: 900; }
+        .hero-title { letter-spacing: -0.05em; line-height: 1.2; font-weight: 900; }
         .btn-glow { box-shadow: 0 0 25px rgba(37, 99, 235, 0.4); }
 
         @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
@@ -75,10 +76,10 @@
             <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition">
                 <i class="fas fa-times text-2xl"></i>
             </button>
-            <h3 class="text-2xl font-bold mb-2 tracking-tighter">시범 사용 신청</h3>
-            <p class="text-slate-500 text-xs mb-8 leading-relaxed">현장 도입 관련 문의를 남겨주시면 담당자가 연락드립니다.</p>
+            <h3 class="text-2xl font-bold mb-2 tracking-tighter text-slate-900">시범 사용 신청</h3>
+            <p class="text-slate-500 text-xs mb-8 leading-relaxed text-left">현장 도입 및 법률 파트너십 관련 문의를 남겨주시면 담당자가 연락드립니다.</p>
             
-            <form id="trialForm" onsubmit="submitTrial(event)" class="space-y-4">
+            <form id="trialForm" onsubmit="submitTrial(event)" class="space-y-4 text-slate-900">
                 <div>
                     <label class="block text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-widest text-left">담당자 성함</label>
                     <input type="text" required id="apply-name" placeholder="성함을 입력하세요" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none bg-slate-50 transition">
@@ -91,7 +92,7 @@
                     <label class="block text-[10px] font-bold text-slate-400 mb-1 uppercase tracking-widest text-left">연락처</label>
                     <input type="tel" required id="apply-phone" placeholder="010-0000-0000" class="w-full px-5 py-4 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none bg-slate-50 transition">
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl mt-4 text-center">
+                <button type="submit" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl mt-4 text-center active:scale-95">
                     신청서 제출하기
                 </button>
             </form>
@@ -99,7 +100,7 @@
                 <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
                     <i class="fas fa-check"></i>
                 </div>
-                <h4 class="text-2xl font-black tracking-tighter text-slate-900">신청 완료!</h4>
+                <h4 class="text-2xl font-black tracking-tighter">신청 완료!</h4>
                 <p class="text-slate-500 mt-3 text-sm text-center">확인 후 빠르게 연락드리겠습니다.</p>
                 <button onclick="closeModal()" class="mt-8 text-blue-600 font-bold border-b-2 border-blue-600 pb-1 mx-auto block">돌아가기</button>
             </div>
@@ -110,10 +111,10 @@
     <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100 h-16 md:h-20 flex items-center">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full flex justify-between items-center text-slate-900 text-left">
             <div class="flex items-center gap-2">
-                <div class="bg-blue-600 text-white w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center shadow-lg">
-                    <i class="fas fa-shield-halved text-lg"></i>
+                <div class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <i class="fas fa-shield-halved text-xl text-white"></i>
                 </div>
-                <span class="text-lg md:text-2xl font-black tracking-tighter text-slate-900 italic">민원제로</span>
+                <span class="text-lg md:text-2xl font-black tracking-tighter text-slate-800 italic">민원제로</span>
             </div>
             
             <div class="hidden md:flex gap-10 text-sm font-bold text-slate-500 tracking-tighter uppercase">
@@ -123,8 +124,8 @@
                 <a href="#pricing" class="hover:text-blue-600 transition tracking-tighter">요금제</a>
             </div>
 
-            <div class="flex items-center gap-2">
-                <button onclick="openModal()" class="hidden xs:block bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-2xl text-xs md:text-sm font-black hover:bg-blue-700 transition shadow-lg">
+            <div class="flex items-center gap-2 text-white">
+                <button onclick="openModal()" class="hidden xs:block bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-2xl text-xs md:text-sm font-black hover:bg-blue-700 transition shadow-lg text-white">
                     시범 사용
                 </button>
                 <button onclick="toggleMobileMenu()" class="md:hidden text-slate-600 p-2 text-xl focus:outline-none">
@@ -136,83 +137,82 @@
 
     <!-- 모바일 메뉴 -->
     <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-2xl z-[60] md:hidden p-8 flex flex-col gap-6 border-l text-slate-900 text-left">
-        <button onclick="toggleMobileMenu()" class="self-end text-slate-400 text-2xl mb-4"><i class="fas fa-times"></i></button>
+        <button onclick="toggleMobileMenu()" class="self-end text-slate-400 text-2xl mb-4"><i class="fas fa-times text-slate-400"></i></button>
         <a href="#problem" onclick="toggleMobileMenu()" class="text-xl font-bold">현장 리스크</a>
         <a href="#ai-demo" onclick="toggleMobileMenu()" class="text-xl font-bold">AI 진단</a>
         <a href="#sample" onclick="toggleMobileMenu()" class="text-xl font-bold">리포트 샘플</a>
         <a href="#pricing" onclick="toggleMobileMenu()" class="text-xl font-bold">요금제</a>
-        <button onclick="openModal(); toggleMobileMenu();" class="mt-4 bg-blue-600 text-white py-4 rounded-2xl font-black text-center">시범 사용 신청</button>
+        <button onclick="openModal(); toggleMobileMenu();" class="mt-4 bg-blue-600 text-white py-4 rounded-2xl font-black text-center text-white">시범 사용 신청</button>
     </div>
     <div id="menu-overlay" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/20 backdrop-blur-sm z-[55] hidden md:hidden"></div>
 
     <!-- 히어로 섹션 -->
     <header class="relative pt-32 md:pt-44 pb-20 md:pb-32 gradient-bg text-center px-4">
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-blue-700 text-[10px] font-black mb-8 uppercase tracking-widest">
-                <i class="fas fa-sparkles"></i> AI Complaint Prevention Platform
+        <div class="max-w-7xl mx-auto relative z-10 text-slate-900">
+            <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full text-blue-700 text-[10px] font-black mb-6 md:mb-8 uppercase tracking-widest font-sans">
+                <i class="fas fa-microchip"></i> AI-Powered Interior Risk Management
             </div>
-            <h1 class="hero-title text-4xl md:text-8xl text-slate-900 mb-6 font-black tracking-tighter break-keep">
-                민원은 대응이 아니라,<br>
-                <span class="text-blue-600 font-black">예방입니다.</span>
+            <h1 class="hero-title text-3xl md:text-5xl lg:text-6xl text-slate-900 mb-6 font-black tracking-tighter break-keep">
+                민원은 사후 대응이 아니라,<br>
+                <span class="text-blue-600 font-black text-slate-900">사전 예방입니다.</span>
             </h1>
-            <p class="text-sm md:text-2xl text-slate-500 max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium tracking-tight break-keep">
-                공사 중단과 이웃 항의, 이제 데이터로 해결하십시오.<br class="block">
-                AI 시뮬레이션으로 이웃 환경을 분석하고, 신뢰받는 안심 리포트를 발행하세요.
+            <p class="text-sm md:text-lg lg:text-xl text-slate-500 max-w-3xl mx-auto mb-10 md:mb-14 leading-relaxed font-medium tracking-tight break-keep">
+                공사 중단과 이웃 항의, 이제 데이터로 해결하십시오.<br class="hidden md:block">
+                전문가가 자문한 안심 안내문 한 장으로 불필요한 오해를 방지하고 이웃의 신뢰를 얻으세요.
             </p>
-            <button onclick="document.getElementById('ai-demo').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-lg md:text-xl hover:bg-slate-800 transition shadow-2xl flex items-center justify-center gap-3 mx-auto">
-                무료 AI 진단 시작 <i class="fas fa-arrow-right text-sm"></i>
+            <button onclick="document.getElementById('ai-demo').scrollIntoView({behavior:'smooth'})" class="bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-lg md:text-xl hover:bg-slate-800 transition shadow-2xl flex items-center justify-center gap-3 mx-auto active:scale-95 text-white">
+                현장 리스크 10초 만에 분석하기 <i class="fas fa-arrow-right text-sm text-white"></i>
             </button>
         </div>
     </header>
 
-    <!-- 현장 리스크 -->
-    <section id="problem" class="py-20 md:py-32 bg-white border-b border-slate-100 scroll-mt-20 text-slate-900">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-center mb-16 md:mb-20">
-                <h2 class="text-2xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 break-keep px-2 text-center">현장 실장님, 오늘도 민원 전화가 두려우신가요?</h2>
-                <p class="text-slate-500 text-sm md:text-xl font-medium tracking-tight">인테리어 공사의 성공은 민원 관리에서 시작됩니다.</p>
+    <!-- 현장 리스크 섹션 -->
+    <section id="problem" class="py-20 md:py-32 bg-white border-b border-slate-100 scroll-mt-24 text-slate-900 text-left">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-900">
+            <div class="text-center mb-16 md:mb-20 text-slate-900">
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tighter text-slate-900 break-keep px-2 text-center">안내문 한 장의 차이가 현장의 평화를 결정합니다</h2>
+                <p class="text-slate-500 text-sm md:text-xl font-medium tracking-tight text-center">감정 섞인 항의를 차분한 양해로 바꾸는 전문적인 리스크 관리</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-slate-900">
                 <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 transition hover:shadow-lg text-center md:text-left">
-                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-red-500 text-xl mx-auto md:mx-0"><i class="fas fa-ban"></i></div>
-                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900">무기한 공사 중단</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep">민원 한 건으로 장비가 멈추고 공비가 늘어나며 마감 일정이 지연됩니다.</p>
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-blue-600 text-xl mx-auto md:mx-0"><i class="fas fa-bullhorn text-blue-600"></i></div>
+                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900 leading-tight">막연한 소음 우려로<br>시작되는 초기 민원</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep">공사 전, AI 분석 데이터가 담긴 안내문을 게시하여 이웃의 막연한 불안감을 해소합니다.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 transition hover:shadow-lg text-center md:text-left">
-                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-orange-500 text-xl mx-auto md:mx-0"><i class="fas fa-brain"></i></div>
-                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900 text-center md:text-left">극심한 감정 노동</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep text-center md:text-left">막무가내식 항의에 쏟는 시간과 스트레스가 작업 품질을 저하시킵니다.</p>
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 transition hover:shadow-lg text-center md:text-left text-slate-900">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-blue-600 text-xl mx-auto md:mx-0"><i class="fas fa-file-signature text-blue-600"></i></div>
+                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900 leading-tight">전문가가 자문한<br>공식적인 안내 양식</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep">단순한 인사가 아닙니다. 전문가 가이드를 거친 어조와 데이터를 통해 신뢰를 전달합니다.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 transition hover:shadow-lg text-center md:text-left">
-                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-yellow-500 text-xl mx-auto md:mx-0"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900 text-center md:text-left">행정/법적 리스크</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep text-center md:text-left">신고 접수 시 소명 절차에 필요한 데이터 근거 자료가 부족하여 불이익을 당합니다.</p>
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 transition hover:shadow-lg text-center md:text-left text-slate-900">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 text-blue-600 text-xl mx-auto md:mx-0"><i class="fas fa-check-double text-blue-600"></i></div>
+                    <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 tracking-tighter text-slate-900 leading-tight">불필요한 감정 소모와<br>공사 중단 방지</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium text-sm md:text-base break-keep text-center md:text-left">철저한 준비를 보여줌으로써 악의적인 항의를 차단하고 작업 환경을 보호합니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- AI 진단 섹션 -->
-    <section id="ai-demo" class="py-20 md:py-32 bg-slate-50 border-b border-slate-100 scroll-mt-20 text-slate-900">
+    <section id="ai-demo" class="py-20 md:py-32 bg-slate-50 border-b border-slate-100 scroll-mt-24 text-slate-900 text-left">
         <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center text-slate-900">
             <div class="text-center mb-12 md:mb-20 text-slate-900">
-                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tighter text-slate-900">실시간 리스크 시뮬레이션</h2>
-                <p class="text-slate-500 font-medium text-sm md:text-xl tracking-tight break-keep">현장 환경과 공정을 선택하세요. 제미나이 AI가 즉각 리포트를 생성합니다.</p>
+                <h2 class="text-2xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tighter text-slate-900 text-center font-sans">우리 현장 안심 분석 & 안내문 생성</h2>
+                <p class="text-slate-500 font-medium text-sm md:text-xl tracking-tight break-keep text-center">현장 상황을 선택하면 AI가 전문가 가이드를 결합한 고품격 안내문을 생성합니다.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left">
-                <!-- 좌측 선택 패널 (다중 공정 추가) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left text-slate-900">
                 <div class="lg:col-span-5 bg-white p-6 md:p-10 rounded-[2.5rem] border border-slate-200 shadow-sm space-y-8 text-left text-slate-900">
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">1. 현장 규모 및 세대 위치</label>
-                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-6 text-left">
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left text-slate-900 font-sans">1. 현장 규모 및 세대 위치</label>
+                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-6 text-left text-slate-900">
                             <div id="pyeong-group" class="grid grid-cols-2 gap-2 text-left">
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '20평대')">20평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '30평대')">30평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '40평대')">40평대</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'pyeong', '50평대+')">50평+</button>
                             </div>
-                            <div id="floor-group" class="grid grid-cols-2 gap-2 text-left">
+                            <div id="floor-group" class="grid grid-cols-2 gap-2 text-left text-slate-900">
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '최상층')">최상층</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '중간층')">중간층</button>
                                 <button class="select-btn" onclick="selectSingle(this, 'floor', '저층부')">저층부</button>
@@ -222,8 +222,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">2. 상세 공정 선택 (중복 가능)</label>
-                        <div id="process-group" class="grid grid-cols-2 md:grid-cols-3 gap-2 text-left">
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left text-slate-900 font-sans">2. 상세 공정 선택 (중복 가능)</label>
+                        <div id="process-group" class="grid grid-cols-2 md:grid-cols-3 gap-2 text-left text-slate-900">
                             <button class="select-btn" onclick="toggleMulti(this, 'process', '전체 철거')">전체 철거</button>
                             <button class="select-btn" onclick="toggleMulti(this, 'process', '마감 철거')">마감 철거</button>
                             <button class="select-btn" onclick="toggleMulti(this, 'process', '발코니 확장')">발코니 확장</button>
@@ -241,8 +241,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left">3. 주변 특이사항 (중복 가능)</label>
-                        <div id="note-group" class="grid grid-cols-2 gap-2 text-left text-slate-900">
+                        <label class="block text-[11px] font-black text-slate-400 mb-4 uppercase tracking-widest text-left text-slate-900 font-sans">3. 주변 특이사항 (중복 가능)</label>
+                        <div id="note-group" class="grid grid-cols-2 gap-2 text-left text-slate-900 text-slate-900">
                             <button class="select-btn" onclick="toggleMulti(this, 'notes', '신생아 가구')">👶 신생아 가구</button>
                             <button class="select-btn" onclick="toggleMulti(this, 'notes', '수험생 거주')">📚 수험생 거주</button>
                             <button class="select-btn" onclick="toggleMulti(this, 'notes', '관리소 엄격')">👮 관리소 엄격</button>
@@ -250,75 +250,75 @@
                         </div>
                     </div>
 
-                    <button onclick="runDiagnostic()" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl active:scale-95 flex items-center justify-center gap-2 btn-glow">
-                        <i class="fas fa-bolt"></i> 분석 리포트 생성 시작
+                    <button onclick="runDiagnostic()" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-xl active:scale-95 flex items-center justify-center gap-2 btn-glow text-white">
+                        <i class="fas fa-bolt text-white"></i> 내 현장 분석 결과 확인하기
                     </button>
                 </div>
 
                 <!-- 우측 결과 리포트 -->
-                <div class="lg:col-span-7 text-left text-slate-900">
-                    <div class="ai-report-card min-h-[500px] md:min-h-[700px] p-6 md:p-12 flex flex-col relative overflow-hidden text-left">
-                        <!-- 대기 -->
+                <div class="lg:col-span-7 text-left text-slate-900 text-slate-900">
+                    <div class="ai-report-card min-h-[500px] md:min-h-[700px] p-6 md:p-12 flex flex-col relative overflow-hidden text-left text-slate-900">
                         <div id="ai-idle" class="flex-1 flex flex-col items-center justify-center text-center opacity-40 text-slate-800">
-                            <i class="fas fa-microchip text-5xl md:text-7xl mb-6 text-blue-600 font-black"></i>
-                            <h3 class="text-xl md:text-2xl font-black tracking-tighter mb-4 text-center">분석 대기 중</h3>
-                            <p class="text-sm md:text-lg font-medium leading-relaxed break-keep text-center">항목을 선택한 뒤 분석 버튼을 클릭해 주세요.</p>
+                            <i class="fas fa-shield-halved text-5xl md:text-7xl mb-6 text-blue-600 font-black text-center text-blue-600"></i>
+                            <h3 class="text-xl md:text-2xl font-black tracking-tighter mb-4 text-center">현장 신뢰도 분석 대기</h3>
+                            <p class="text-sm md:text-lg font-medium leading-relaxed break-keep text-center text-slate-900">항목 선택 시 전문가 자문 로직이 가동되어<br>엘리베이터 게시용 안내문 초안을 생성합니다.</p>
                         </div>
 
-                        <!-- 로딩 -->
                         <div id="ai-loading" class="hidden flex-1 flex flex-col items-center justify-center space-y-10 text-center">
                             <div class="w-16 h-16 md:w-24 md:h-24 border-8 border-blue-100 border-t-blue-600 rounded-full animate-spin mx-auto text-center"></div>
                             <div>
-                                <p class="text-blue-600 font-black text-xl md:text-3xl tracking-tighter loading-pulse uppercase">제미나이 2.5 시뮬레이션 중</p>
-                                <p class="text-slate-400 text-[10px] md:text-sm mt-3 uppercase font-black tracking-widest opacity-70 break-keep text-center mx-auto font-sans">Analyzing construction data in real-time...</p>
+                                <p class="text-blue-600 font-black text-xl md:text-3xl tracking-tighter loading-pulse uppercase font-sans text-center">안심 데이터 분석 중</p>
+                                <p class="text-slate-400 text-[10px] md:text-sm mt-3 uppercase font-black tracking-widest opacity-70 break-keep text-center mx-auto">Matching expert guides and noise data...</p>
                             </div>
                         </div>
 
-                        <!-- 결과 콘텐츠 -->
-                        <div id="ai-content" class="hidden space-y-8 md:space-y-10 animate-in fade-in duration-300 text-left">
-                            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-slate-100 pb-6 md:pb-8">
+                        <div id="ai-content" class="hidden space-y-8 md:space-y-10 animate-in fade-in duration-300 text-left text-slate-900">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-slate-100 pb-6 md:pb-8 text-left text-slate-900">
                                 <div>
-                                    <h3 class="font-black text-slate-900 text-xl md:text-3xl tracking-tighter uppercase font-sans">AI Diagnostic Report</h3>
-                                    <p class="text-[9px] md:text-[11px] text-blue-600 font-black tracking-widest mt-1 md:mt-2 uppercase italic">Complaints Prevention Risk Analysis</p>
+                                    <h3 class="font-black text-slate-900 text-xl md:text-3xl tracking-tighter uppercase text-left">Confidence Report</h3>
+                                    <p class="text-[9px] md:text-[11px] text-blue-600 font-black tracking-widest mt-1 md:mt-2 uppercase text-left italic">MinwonZero Intelligence Strategy</p>
                                 </div>
-                                <span id="res-badge" class="mt-4 md:mt-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm italic"></span>
+                                <span id="res-badge" class="mt-4 md:mt-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm"></span>
                             </div>
 
-                            <div class="grid grid-cols-3 gap-2 md:gap-4">
+                            <div class="grid grid-cols-3 gap-2 md:gap-4 text-left text-slate-900 text-center">
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
-                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">리스크</p>
-                                    <p id="res-score" class="text-xs md:text-2xl font-black text-blue-600 leading-none mt-1 whitespace-nowrap italic text-center"></p>
+                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">민원 리스크</p>
+                                    <p id="res-score" class="text-xs md:text-2xl font-black text-blue-600 leading-none mt-2 whitespace-nowrap text-center text-blue-600"></p>
                                 </div>
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
-                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">피크 소음</p>
-                                    <p id="res-noise" class="text-[12px] md:text-2xl font-black text-orange-500 leading-none mt-1 whitespace-nowrap italic text-center"></p>
+                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">예상 소음</p>
+                                    <p id="res-noise" class="text-[11px] md:text-2xl font-black text-orange-500 leading-none mt-2 whitespace-nowrap text-center text-orange-500 font-sans"></p>
                                 </div>
                                 <div class="bg-slate-50 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 text-center shadow-sm">
-                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">집진 효율</p>
-                                    <p id="res-dust" class="text-xs md:text-2xl font-black text-emerald-500 leading-none mt-1 whitespace-nowrap italic text-center"></p>
+                                    <p class="text-[8px] md:text-[10px] text-slate-400 font-black mb-1 uppercase tracking-widest leading-none text-center">데이터 신뢰도</p>
+                                    <p id="res-dust" class="text-xs md:text-2xl font-black text-emerald-500 leading-none mt-2 whitespace-nowrap text-center text-emerald-500 font-sans uppercase">High</p>
                                 </div>
                             </div>
 
-                            <div class="space-y-6 md:space-y-8 text-left text-slate-900">
+                            <div class="space-y-6 md:space-y-8 text-left text-slate-900 text-slate-900">
                                 <div>
-                                    <p class="text-[10px] md:text-[11px] text-slate-900 font-black mb-3 md:mb-4 uppercase tracking-widest flex items-center gap-2">
-                                        <i class="fas fa-triangle-exclamation text-red-500 animate-pulse"></i> 예측 민원 시나리오
+                                    <p class="text-[10px] md:text-[11px] text-slate-900 font-black mb-3 md:mb-4 uppercase tracking-widest flex items-center gap-2 text-left text-slate-900">
+                                        <i class="fas fa-hand-holding-heart text-blue-600"></i> AI 예상 민원 완화 시나리오
                                     </p>
                                     <div id="res-scenarios" class="space-y-3"></div>
                                 </div>
-                                <div class="bg-blue-50 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-blue-100 text-left text-slate-900 font-sans">
-                                    <p class="text-[10px] md:text-[11px] text-blue-600 font-black mb-2 md:mb-3 uppercase tracking-widest">전문가 대응 가이드</p>
-                                    <p id="res-strategy" class="text-xs md:text-[15px] text-left leading-relaxed text-slate-700 font-semibold break-keep"></p>
+                                <div class="bg-slate-900 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] text-left text-white shadow-xl">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="bg-blue-600 p-1 rounded text-[8px] font-bold text-white uppercase tracking-widest">Expert Advisory</div>
+                                        <p class="text-[10px] md:text-[11px] text-blue-400 font-black uppercase tracking-widest text-left">전문가 자문 핵심 전략</p>
+                                    </div>
+                                    <p id="res-strategy" class="text-xs md:text-[15px] text-left leading-relaxed text-slate-100 font-semibold break-keep text-slate-100"></p>
                                 </div>
                                 <div class="border border-slate-200 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-slate-50/50 relative text-center text-slate-900">
-                                    <p class="text-[10px] md:text-[11px] text-slate-400 font-black mb-4 uppercase tracking-widest text-center">입주민 배포용 안심 안내문</p>
-                                    <p id="res-draft" class="text-xs md:text-sm text-slate-600 leading-relaxed text-center font-medium break-keep"></p>
+                                    <p class="text-[10px] md:text-[11px] text-slate-400 font-black mb-4 uppercase tracking-widest text-center">입주민 게시용 안심 안내문 (복사해서 사용하세요)</p>
+                                    <p id="res-draft" class="text-xs md:text-sm text-slate-600 leading-relaxed text-center font-medium break-keep text-slate-600"></p>
                                     <div class="mt-6 md:mt-8 flex flex-col md:flex-row justify-center gap-3">
-                                        <button onclick="copyRes()" class="bg-white border border-slate-200 px-6 py-3 rounded-2xl text-xs font-black hover:bg-slate-50 transition flex items-center justify-center gap-2 text-slate-900 shadow-sm active:scale-95 font-sans">
-                                            <i class="fas fa-copy"></i> 문구 복사
+                                        <button onclick="copyRes()" class="bg-white border border-slate-200 px-6 py-3 rounded-2xl text-xs font-black hover:bg-slate-50 transition flex items-center justify-center gap-2 text-slate-900 shadow-sm active:scale-95 text-slate-900 font-sans">
+                                            <i class="fas fa-copy text-slate-900"></i> 문구 복사
                                         </button>
-                                        <button onclick="printNotice()" class="bg-blue-600 px-6 py-3 rounded-2xl text-xs font-black text-white hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg active:scale-95 font-sans">
-                                            <i class="fas fa-file-pdf"></i> 인쇄하기 (A4)
+                                        <button onclick="printNotice()" class="bg-blue-600 px-6 py-3 rounded-2xl text-xs font-black text-white hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-lg active:scale-95 text-white font-sans">
+                                            <i class="fas fa-print text-white font-sans"></i> 전문 안내문 인쇄 (A4)
                                         </button>
                                     </div>
                                 </div>
@@ -330,109 +330,59 @@
         </div>
     </section>
 
-    <!-- 안심 가이드 리포트 샘플 -->
-    <section id="sample" class="py-24 bg-white border-t border-slate-100 scroll-mt-20 text-slate-900">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center text-slate-900">
-            <h2 class="text-3xl md:text-5xl font-black mb-6 tracking-tighter break-keep font-sans">데이터로 증명하는 안심 리포트</h2>
-            <p class="text-slate-500 mb-16 text-sm md:text-xl max-w-3xl mx-auto font-medium leading-relaxed tracking-tight break-keep text-center">단순히 '죄송합니다'가 아닌, 실제 수치와 AI 시나리오 데이터로 주민들을 먼저 안심시키세요.</p>
-            
-            <div class="sample-report p-6 md:p-12 border border-slate-200 shadow-2xl max-w-3xl mx-auto text-left relative overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] bg-white">
-                <div class="absolute top-0 right-0 w-48 h-48 bg-blue-50 rounded-bl-full opacity-40 font-sans"></div>
-                <div class="flex justify-between items-start mb-10 border-b border-slate-100 pb-8 md:pb-10 relative z-10 text-left text-slate-900">
-                    <div>
-                        <div class="flex items-center gap-2 mb-3">
-                            <div class="bg-blue-600 text-white p-1.5 rounded-lg text-[10px]">
-                                <i class="fas fa-shield-halved text-sm md:text-lg"></i>
-                            </div>
-                            <span class="text-sm md:text-xl font-black tracking-tighter text-slate-800 italic">민원제로</span>
-                        </div>
-                        <h4 class="text-xl md:text-4xl font-black tracking-tighter text-slate-900 leading-tight font-sans text-left">안심 시공 가이드 리포트</h4>
-                    </div>
-                    <i class="fas fa-qrcode text-5xl md:text-7xl text-slate-800"></i>
-                </div>
-                
-                <div class="space-y-8 relative z-10 text-slate-900 text-left text-center">
-                    <div class="bg-slate-50 p-6 md:p-8 rounded-[2rem] border border-slate-100 text-center">
-                        <p class="text-[10px] md:text-[12px] font-black text-slate-400 mb-6 uppercase tracking-widest text-center font-sans">공정별 소음 시뮬레이션 (AI 예측)</p>
-                        <div class="flex items-end gap-3 h-24 justify-center">
-                            <div class="bg-blue-200 w-6 md:w-10 h-1/4 rounded-t-xl"></div>
-                            <div class="bg-blue-600 w-6 md:w-10 h-3/4 rounded-t-xl animate-pulse"></div>
-                            <div class="bg-blue-300 w-6 md:w-10 h-1/2 rounded-t-xl"></div>
-                            <div class="bg-blue-700 w-6 md:w-10 h-full rounded-t-xl animate-pulse"></div>
-                            <div class="bg-slate-300 w-6 md:w-10 h-1/5 rounded-t-xl font-sans"></div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 text-center text-slate-900">
-                        <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white shadow-sm text-center">
-                            <p class="text-[8px] md:text-[10px] text-slate-400 font-black uppercase mb-2 text-center font-sans">피크 소음</p>
-                            <p class="text-lg md:text-3xl font-black text-orange-600 leading-none text-center font-sans italic">78.5 dB</p>
-                        </div>
-                        <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white shadow-sm text-center">
-                            <p class="text-[8px] md:text-[10px] text-slate-400 font-black uppercase mb-2 text-center font-sans">집진 효율</p>
-                            <p class="text-lg md:text-3xl font-black text-emerald-600 leading-none text-center font-sans italic">94.2 %</p>
-                        </div>
-                        <div class="p-4 md:p-6 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] bg-white shadow-sm text-center">
-                            <p class="text-[8px] md:text-[10px] text-slate-400 font-black uppercase mb-2 text-center font-sans">민원 점수</p>
-                            <p class="text-blue-600 font-black text-lg md:text-2xl leading-none uppercase text-center font-sans italic">Safe</p>
-                        </div>
-                    </div>
-
-                    <p class="text-center text-[10px] text-slate-400 mt-6 italic font-bold tracking-tight text-center font-sans text-slate-400">* 본 리포트는 입력된 현장 데이터와 주변 이웃 환경을 실시간 분석하여 자동으로 도출된 실제 결과값의 샘플입니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 요금제 섹션 -->
-    <section id="pricing" class="py-24 bg-slate-50 text-center text-slate-900 scroll-mt-20">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-900">
-            <h2 class="text-3xl md:text-5xl font-black mb-16 tracking-tighter text-slate-900 underline underline-offset-8 decoration-blue-600 decoration-4 uppercase font-sans">요금제</h2>
+    <section id="pricing" class="py-24 bg-white text-center text-slate-900 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6 text-center text-slate-900 text-slate-900 font-sans">
+            <h2 class="text-3xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 uppercase text-center text-slate-900 font-sans">서비스 요금제</h2>
+            <p class="text-slate-500 mb-16 text-center font-medium tracking-tight font-sans">전문적인 리포트와 격조 있는 안내문으로 현장의 가치를 높이세요.</p>
             <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto items-center text-center text-slate-900">
-                <div class="bg-white p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-center text-slate-900">
+                <div class="bg-slate-50 p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-slate-200 shadow-sm flex flex-col items-center text-slate-900 text-slate-900">
                     <h3 class="text-slate-400 font-bold uppercase text-xs mb-4 tracking-widest text-center font-sans">개별 현장권</h3>
-                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-slate-900 tracking-tighter leading-none italic font-sans">₩55,000 <span class="text-sm font-normal text-slate-400 not-italic">/ 현장</span></div>
-                    <ul class="text-left space-y-4 mb-12 text-slate-600 text-sm font-bold tracking-tight text-left text-slate-600">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> AI 정밀 리포트 1회 발행</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 입주민 안내용 인쇄물 양식 제공</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 행정 소명용 데이터 리포트 제공</li>
+                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-slate-900 tracking-tighter leading-none font-sans font-black">₩55,000 <span class="text-sm font-normal text-slate-400 not-italic">/ 현장</span></div>
+                    <ul class="text-left space-y-4 mb-12 text-slate-600 text-sm font-bold tracking-tight text-left text-slate-600 font-sans">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> AI 정밀 리스크 분석 리포트</li>
+                        <li class="flex items-center gap-3 text-blue-600 font-black"><i class="fas fa-shield-halved text-blue-600"></i> 전문가 자문 안내문 양식 제공</li>
+                        <li class="flex items-center gap-3 text-slate-600"><i class="fas fa-check-circle text-blue-500 text-blue-600"></i> 엘리베이터 부착용 고해상도 PDF</li>
+                        <li class="flex items-center gap-3 text-slate-600"><i class="fas fa-check-circle text-blue-500 text-blue-600"></i> 행정 기관 소명 지원용 데이터</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full border-2 border-slate-900 py-4 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition uppercase text-sm active:scale-95 font-sans">시범 사용 신청</button>
+                    <button onclick="openModal()" class="w-full border-2 border-slate-900 py-4 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition uppercase text-sm active:scale-95 font-sans">지금 바로 분석 시작하기</button>
                 </div>
-                <div class="bg-slate-900 text-white p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border-4 border-blue-600 shadow-2xl flex flex-col items-center relative scale-100 md:scale-105">
-                    <div class="absolute -top-5 bg-blue-600 text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-blue-500/50 font-sans">Enterprise</div>
-                    <h3 class="text-blue-400 font-bold uppercase text-xs mb-4 tracking-widest text-center font-sans text-blue-400">비즈니스 구독권</h3>
-                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-white tracking-tighter leading-none italic font-sans">별도 문의 <span class="text-sm font-normal text-slate-500 not-italic">/ 월</span></div>
-                    <ul class="text-left space-y-4 mb-12 text-slate-300 text-sm font-bold tracking-tight text-left text-slate-300">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 무제한 현장 등록 및 AI 분석</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 시공사 통합 현장 대시보드 관리</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500"></i> 실시간 소음 모니터링 연동</li>
+                <div class="bg-slate-900 text-white p-10 md:p-12 rounded-[2.5rem] md:rounded-[3rem] border-4 border-blue-600 shadow-2xl flex flex-col items-center relative scale-100 md:scale-105 text-white">
+                    <div class="absolute -top-5 bg-blue-600 text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-blue-500/50 text-white font-sans">Enterprise</div>
+                    <h3 class="text-blue-400 font-bold uppercase text-xs mb-4 tracking-widest text-center font-sans text-blue-400">비즈니스 파트너십</h3>
+                    <div class="text-4xl md:text-5xl font-black mb-8 italic text-white tracking-tighter leading-none text-white font-sans">별도 문의 <span class="text-sm font-normal text-slate-500 not-italic text-slate-500">/ 월</span></div>
+                    <ul class="text-left space-y-4 mb-12 text-slate-300 text-sm font-bold tracking-tight text-left text-slate-300 font-sans">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500 text-blue-500"></i> 무제한 현장 분석 및 전용 대시보드</li>
+                        <li class="flex items-center gap-3 text-blue-400 font-black"><i class="fas fa-handshake text-blue-400"></i> 시공사 로고 삽입 전문 안내문 발행</li>
+                        <li class="flex items-center gap-3 text-blue-400 font-black"><i class="fas fa-user-tie text-blue-400"></i> 분쟁 발생 시 전문가 1:1 상담 연결</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-blue-500 text-blue-500"></i> 실시간 소음 IoT 연동 기술 지원</li>
                     </ul>
-                    <button onclick="openModal()" class="w-full bg-blue-600 py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg uppercase tracking-tighter text-sm active:scale-95 font-sans">상담 및 문의하기</button>
+                    <button onclick="openModal()" class="w-full bg-blue-600 py-4 rounded-2xl font-black hover:bg-blue-700 transition shadow-lg uppercase tracking-tighter text-sm active:scale-95 text-center text-white font-sans">파트너 도입 상담하기</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 인쇄용 프레임 (Hidden) -->
-    <div id="print-frame" class="hidden">
+    <!-- 인쇄 프레임 (Hidden) -->
+    <div id="print-frame" class="hidden text-slate-900">
         <div style="padding: 60px; border: 20px double #1e40af; background: white; min-height: 1100px; color: black !important; text-align: left; font-family: sans-serif;">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h1 style="font-size: 60px; font-weight: 900; color: #1e3a8a; margin-bottom: 20px; letter-spacing: -3px;">공사 안내 및 주민 양해문</h1>
-                <p style="font-size: 24px; color: #64748b; font-weight: 700;">첨단 AI 데이터 리스크 관리 솔루션 | 민원제로</p>
+                <h1 style="font-size: 60px; font-weight: 900; color: #1e3a8a; margin-bottom: 20px; letter-spacing: -3px; font-family: sans-serif;">공사 안내 및 주민 양해문</h1>
+                <p style="font-size: 24px; color: #64748b; font-weight: 700; font-family: sans-serif;">전문가 자문 및 AI 데이터 안심 솔루션 | 민원제로</p>
             </div>
             <div style="margin-bottom: 80px; font-size: 28px; line-height: 1.8; color: #1e293b; border-left: 12px solid #2563eb; padding-left: 50px; text-align: justify; font-family: sans-serif;">
-                <p id="p-content" style="white-space: pre-line; font-weight: 600;"></p>
+                <p id="p-content" style="white-space: pre-line; font-weight: 600; font-family: sans-serif;"></p>
             </div>
             <div style="background: #f8fafc; padding: 50px; border-radius: 30px; margin-bottom: 80px; border: 1px solid #e2e8f0;">
-                <div style="display: flex; justify-content: space-around; text-align: center;">
-                    <div><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">예상 피크 소음</p><p id="p-noise" style="font-size: 40px; font-weight: 900; color: #ea580c;"></p></div>
-                    <div style="border-left: 2px solid #e2e8f0; border-right: 2px solid #e2e8f0; padding: 0 40px;"><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">집진 효율</p><p id="p-dust" style="font-size: 40px; font-weight: 900; color: #059669;"></p></div>
-                    <div><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">리스크 등급</p><p id="p-risk" style="font-size: 40px; font-weight: 900; color: #2563eb;"></p></div>
+                <p style="text-align: center; font-weight: 900; color: #1e40af; margin-bottom: 30px; font-size: 22px; font-family: sans-serif;">본 리포트는 AI 데이터 분석 및 전문가 가이드에 의해 주민 배포용으로 최적화되었습니다.</p>
+                <div style="display: flex; justify-content: space-around; text-align: center; font-family: sans-serif;">
+                    <div><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">예상 피크 소음</p><p id="p-noise" style="font-size: 40px; font-weight: 900; color: #ea580c; font-family: sans-serif;"></p></div>
+                    <div style="border-left: 2px solid #e2e8f0; border-right: 2px solid #e2e8f0; padding: 0 40px;"><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">데이터 신뢰도</p><p id="p-dust" style="font-size: 40px; font-weight: 900; color: #059669; font-family: sans-serif;">최상</p></div>
+                    <div><p style="font-size: 16px; color: #94a3b8; font-weight: 800; margin-bottom: 10px;">리스크 등급</p><p id="p-risk" style="font-size: 40px; font-weight: 900; color: #2563eb; font-family: sans-serif;"></p></div>
                 </div>
             </div>
             <div style="text-align: center; color: #94a3b8; font-size: 18px; border-top: 3px solid #f1f5f9; padding-top: 50px; font-family: sans-serif;">
-                <p style="margin-bottom: 15px; font-weight: 600;">이웃분들의 불편을 최소화하기 위해 당사는 첨단 AI 기술로 소음과 먼지를 과학적으로 관리하고 있습니다.</p>
+                <p style="margin-bottom: 15px; font-weight: 600;">이웃분들의 일상 불편을 최소화하기 위해 당사는 첨단 AI 기술과 고품격 관리 수칙을 준수하고 있습니다.</p>
                 <p style="font-weight: 900; color: #1e293b; font-size: 28px;">현장 관리 책임자 및 시공사 일동</p>
             </div>
         </div>
@@ -443,26 +393,26 @@
         <div class="max-w-7xl mx-auto px-6 text-center text-slate-300">
             <div class="flex items-center justify-center gap-3 mb-10 text-white mx-auto">
                 <div class="bg-blue-600 text-white p-1.5 md:p-2 rounded-lg shadow-lg">
-                    <i class="fas fa-shield-halved text-sm md:text-lg"></i>
+                    <i class="fas fa-shield-halved text-sm md:text-lg text-white"></i>
                 </div>
-                <span class="font-black text-xl md:text-2xl tracking-tighter italic text-white">민원제로</span>
+                <span class="font-black text-xl md:text-2xl tracking-tighter italic text-white font-sans">민원제로</span>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left opacity-80 max-w-4xl mx-auto border-b border-white/5 pb-10 mb-10 text-slate-300 font-sans">
-                <div class="space-y-2 text-left">
+                <div class="space-y-2 text-left text-slate-300 font-sans">
                     <p class="text-white/60 font-black uppercase tracking-widest text-[10px] mb-4 text-left font-sans">Company Info</p>
-                    <p class="flex gap-2 text-left"><span>기업명:</span> <span class="text-white/90 font-bold">㈜미노바이</span></p>
-                    <p class="flex gap-2 text-left font-sans text-left"><span>대표자:</span> <span class="text-white/90 font-bold text-left">박찬수</span></p>
-                    <p class="flex gap-2 text-left"><span>사업자등록번호:</span> <span class="text-white/90 font-bold">110-11-7654321</span></p>
+                    <p class="flex gap-2 text-left text-slate-300"><span>기업명:</span> <span class="text-white/90 font-bold">㈜미노바이</span></p>
+                    <p class="flex gap-2 text-left font-sans text-left text-slate-300"><span>대표자:</span> <span class="text-white/90 font-bold text-left">박찬수</span></p>
+                    <p class="flex gap-2 text-left text-slate-300 font-sans"><span>사업자등록번호:</span> <span class="text-white/90 font-bold text-left">110-11-7654321</span></p>
                 </div>
-                <div class="space-y-2 text-left text-slate-300">
+                <div class="space-y-2 text-left text-slate-300 font-sans">
                     <p class="text-white/60 font-black uppercase tracking-widest text-[10px] mb-4 text-left font-sans text-slate-300">Contact & Address</p>
-                    <p class="flex gap-2 text-left font-sans"><span>이메일:</span> <span class="text-white/90 underline decoration-white/20 font-bold text-slate-300">nofomo2025@gmail.com</span></p>
-                    <p class="flex gap-2 text-left font-sans text-left leading-relaxed"><span>주소:</span> <span class="text-white/90 font-bold font-sans text-left text-slate-300">서울특별시 강남구 테헤란로 인테리어 빌딩 14층</span></p>
+                    <p class="flex gap-2 text-left font-sans text-slate-300"><span>이메일:</span> <span class="text-white/90 underline decoration-white/20 font-bold text-slate-300 font-sans">nofomo2025@gmail.com</span></p>
+                    <p class="flex gap-2 text-left font-sans text-left leading-relaxed text-slate-300 font-sans"><span>주소:</span> <span class="text-white/90 font-bold font-sans text-left text-slate-300">서울특별시 강남구 테헤란로 인테리어 빌딩 14층</span></p>
                 </div>
             </div>
 
-            <p class="mb-2 uppercase tracking-[0.2em] font-black break-keep px-4 text-white/20 font-sans text-center">© 2024 MinwonZero AI Infrastructure Solution. All Rights Reserved.</p>
+            <p class="mb-2 uppercase tracking-[0.2em] font-black break-keep px-4 text-white/20 font-sans text-center">© 2024 민원제로 AI Infrastructure Solution. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -471,6 +421,12 @@
         const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent";
 
         let selections = { pyeong: "", floor: "", process: [], notes: [] };
+
+        window.onload = function() {
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
+        };
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -499,7 +455,11 @@
 
         function openModal() { document.getElementById('trialModal').classList.add('active'); }
         function closeModal() { document.getElementById('trialModal').classList.remove('active'); }
-        function submitTrial(e) { e.preventDefault(); document.getElementById('trialForm').classList.add('hidden'); document.getElementById('submitSuccess').classList.remove('hidden'); }
+        function submitTrial(e) { 
+            e.preventDefault(); 
+            document.getElementById('trialForm').classList.add('hidden'); 
+            document.getElementById('submitSuccess').classList.remove('hidden'); 
+        }
 
         async function runDiagnostic() {
             document.getElementById('ai-idle').classList.add('hidden');
@@ -513,7 +473,7 @@
             const pr = selections.process.length > 0 ? selections.process.join(', ') : "전체 철거";
             const nt = selections.notes.length > 0 ? selections.notes.join(', ') : "특징 없음";
 
-            const prompt = `인테리어 전문가로서 답변: 평형:${p}, 층수:${f}, 공정:${pr}, 특이:${nt}. JSON으로만 답변: {riskLevel: "상/중/하", riskScore: "0-100점", peakNoise: "dB", dustLevel: "0-100%", scenarios: ["시나리오3개"], strategy: "실장님전략", draft: "주민양해문"}`;
+            const prompt = `인테리어 민원 관리 전문가로서 답변: 평형:${p}, 층수:${f}, 공정:${pr}, 특이:${nt}. JSON으로 답변: {riskLevel: "상/중/하", riskScore: "0-100점", peakNoise: "dB", scenarios: ["민원 완화 시나리오3개"], strategy: "전문가 자문 가이드를 녹여낸 세련된 대응 전략", draft: "이웃의 양해를 이끌어낼 정중한 안내문 초안"}`;
 
             try {
                 if (!apiKey || apiKey.trim() === "") throw new Error("DemoMode");
@@ -533,19 +493,17 @@
         function generateMock(p, f, pr, nt) {
             let score = 55;
             if (pr.includes('철거')) score += 25;
-            if (nt.includes('신생아')) score += 15;
             return {
-                riskLevel: score > 80 ? "상 (위험)" : (score > 55 ? "중 (주의)" : "하 (안전)"),
+                riskLevel: score > 70 ? "상 (주의)" : "중 (원만)",
                 riskScore: `${score}/100`,
                 peakNoise: score > 75 ? "81.4 dB" : "68.2 dB",
-                dustLevel: pr.includes('철거') ? "88.5 %" : "96.8 %",
                 scenarios: [
-                    `${pr} 시 수직 진동으로 인한 직하층 항의 가능성 높음`,
-                    `${nt.includes('신생아') ? "낮잠 시간대 소음 항의로 인한 공사 중단 우려" : "자재 반입 중 엘리베이터 점유 마찰"}`,
-                    `${f === '최상층' ? "옥상 환기구를 통한 미세 분진 유입 민원" : "공용부 보양 미흡 지적"}`
+                    `${pr} 시 진동은 현행 기준 이내이나, 게시판에 AI 분석 수치를 사전 고지하여 심리적 거부감을 최소화함`,
+                    `${nt.includes('신생아') ? "신생아 가구 개별 방문 전, 전문가 자문 문구가 포함된 정중한 안내문 전달로 마찰 예방" : "자재 반입 시 통행로 점유에 대한 사전 고지로 주민 협조 유도"}`,
+                    `${f === '최상층' ? "옥상 환기구 분진 유입에 대비한 사전 안내로 불필요한 환경 민원 차단" : "복도 보양 미관에 신경 쓴 안내문 부착으로 시공사의 전문 이미지 강화"}`
                 ],
-                strategy: `${pr} 착공 2일 전 방문 인사가 필수입니다. 신생아 가구 개별 귀마개 전달 및 관리실 소음 규정 준수를 통해 주민 마찰을 예방하세요.`,
-                draft: `안녕하십니까, 이웃분들께 ${p} ${pr} 시공 소식을 전하며 소음 불편에 대해 사과드립니다. 철저한 먼지 관리와 집중 시간대 시공으로 조속히 마무리하겠습니다. 양해 부탁드립니다.`
+                strategy: `전문가 전략: ${pr} 착공 전 엘리베이터에 '전문가 자문 및 소음 시뮬레이션 완료' 문구가 포함된 공식 안내문을 게시하십시오. 이웃들에게 본 시공이 체계적이고 법적/행정적 기준을 철저히 준수하고 있음을 보여주는 것만으로도, 감정적인 초기 민원의 80% 이상을 사전에 예방할 수 있습니다.`,
+                draft: `안녕하십니까, 이웃분들의 평온한 일상을 존중하는 시공팀입니다. ${p} ${pr} 시공 소식을 전하며 소음으로 인한 불편에 깊은 사과를 드립니다. 당사는 전문가 자문을 통해 도출된 소음 관리 수칙을 철저히 준수하고 있습니다. 너그러운 양해 부탁드립니다.`
             };
         }
 
@@ -557,22 +515,20 @@
             content.classList.remove('hidden');
             
             const badge = document.getElementById('res-badge');
-            badge.innerText = `위험도: ${data.riskLevel}`;
-            badge.className = `text-[10px] px-5 py-2 rounded-full font-black uppercase tracking-widest ` + (data.riskLevel.includes('상') ? 'bg-red-500 text-white shadow-md' : (data.riskLevel.includes('중') ? 'bg-yellow-400 text-slate-900 shadow-md' : 'bg-green-500 text-white shadow-md'));
+            badge.innerText = `신뢰지수: ${data.riskLevel}`;
+            badge.className = `text-[10px] px-5 py-2 rounded-full font-black uppercase tracking-widest ` + (data.riskLevel.includes('상') ? 'bg-red-500 text-white shadow-md' : 'bg-blue-600 text-white shadow-md');
 
             document.getElementById('res-score').innerText = data.riskScore;
             document.getElementById('res-noise').innerText = data.peakNoise;
-            document.getElementById('res-dust').innerText = data.dustLevel;
 
             document.getElementById('res-scenarios').innerHTML = data.scenarios.map(s => 
-                `<div class="flex gap-4 text-[13px] text-slate-600 p-4 bg-slate-50 rounded-2xl border border-slate-100 animate-in slide-in-from-right duration-500 text-left font-medium break-keep font-sans text-left"><i class="fas fa-exclamation-triangle text-orange-500 mt-1"></i> <span>${s}</span></div>`).join('');
+                `<div class="flex gap-4 text-[13px] text-slate-600 p-4 bg-slate-50 rounded-2xl border border-slate-100 animate-in slide-in-from-right duration-500 text-left font-medium break-keep font-sans"><i class="fas fa-hand-holding-heart text-blue-500 mt-1"></i> <span>${s}</span></div>`).join('');
 
             document.getElementById('res-strategy').innerText = data.strategy;
             document.getElementById('res-draft').innerText = `"${data.draft}"`;
 
             document.getElementById('p-content').innerText = data.draft;
             document.getElementById('p-noise').innerText = data.peakNoise;
-            document.getElementById('p-dust').innerText = data.dustLevel;
             document.getElementById('p-risk').innerText = data.riskLevel;
         }
 
@@ -584,7 +540,7 @@
             dummy.select();
             document.execCommand("copy");
             document.body.removeChild(dummy);
-            alert("양해문이 복사되었습니다.");
+            alert("격조 있는 안내문이 복사되었습니다.");
         }
 
         function printNotice() { window.print(); }
